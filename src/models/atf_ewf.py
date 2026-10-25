@@ -18,7 +18,7 @@ class ATFEWFPitchEstimator:
         self.frame_length = frame_length
         self.hop_length = hop_length
         self.fft_size = fft_size
-
+# Task 1:
     def compute_spectral_flatness(self, power_spectrum):
         """Computes Wiener entropy (spectral flatness) to weight time vs freq confidence."""
         eps = 1e-10
@@ -44,7 +44,7 @@ class ATFEWFPitchEstimator:
         if max_val > 0:
             salience = salience / max_val
         return salience
-
+# Task 2:
     def group_delay_refinement(self, stft_matrix, frequencies):
         """
         Refines frequency bins using the phase derivative (group delay).
@@ -61,7 +61,7 @@ class ATFEWFPitchEstimator:
         # Group delay sub-bin frequency correction delta_f
         delta_f = -d_phase_d_omega / (2.0 * np.pi)
         return delta_f
-
+# Task 3:
     def inter_frame_smoothing(self, pitch_contour, transition_cost=15.0):
         """
         Applies dynamic programming / Viterbi decoding to suppress octave jumps 
