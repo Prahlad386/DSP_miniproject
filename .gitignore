@@ -1,0 +1,4 @@
+
+data/raw/
+data/processed/train_val_manifest.csv
+data/processed/evaluation/
