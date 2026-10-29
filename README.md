@@ -140,9 +140,9 @@ With the initial infrastructure established, development responsibilities transi
 
 | Person | Responsibility | Primary Focus |
 |---|---|---|
-| Person 1 | Lead DSP Architect & Proposed Hybrid Method | Hybrid algorithm and DSP theory |
-| Person 2 | Synthetic Audio Simulator & Baseline 1 | Synthetic signal generation and YIN |
-| Person 3 | Dataset Partitioning, Baseline 2 & Evaluation | Dataset splits, HPS, and benchmarking |
+| Person 1 (YASH KORDE) | Lead DSP Architect & Proposed Hybrid Method | Hybrid algorithm and DSP theory |
+| Person 2 (SAGAR R) | Synthetic Audio Simulator & Baseline 1 | Synthetic signal generation and YIN |
+| Person 3 (DHRUV JALAN)| Dataset Partitioning, Baseline 2 & Evaluation | Dataset splits, HPS, and benchmarking |
 
 ---
 
