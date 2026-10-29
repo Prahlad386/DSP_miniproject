@@ -24,36 +24,7 @@ Fundamental frequency estimation, Pitch tracking, YIN algorithm, Harmonic Produc
 \section{Introduction}
 \section{Signal Model \& Problem Statement}
 \section{Baseline Algorithms}
-
 \section{Proposed Hybrid ATF-EWF Algorithm}
-\label{sec:proposed}
-
-Standard pitch estimation approaches frequently encounter catastrophic failures due to octave halving in time-domain autocorrelation methods or spectral leakage and mainlobe overlap in frequency-domain techniques \cite{decheveigne2002yin, schroeder1968hps}. To resolve these limitations, we propose the Adaptive Time-Frequency Energy-Weighted Fusion (ATF-EWF) framework.
-
-\subsection{Joint Salience Function Formulation}
-The proposed architecture integrates temporal correlation properties with spectral harmonic structures through a dynamic weighting function. The fused salience $S_{\text{fused}}(\tau)$ at frame time index $t$ is formulated as:
-\begin{equation}
-S_{\text{fused}}(\tau)
-=
-\alpha(t)S_{\text{time}}(\tau)
-+
-\left(1-\alpha(t)\right)S_{\text{freq}}(\tau)
-\end{equation}
-where $\alpha(t) \in [0, 1]$ is an adaptive confidence coefficient derived directly from the local frame's spectral flatness (Wiener entropy). In noisy or percussive regions where spectral flatness increases, temporal cues are dynamically down-weighted in favor of harmonic profile matching.
-
-\subsection{Phase and Group Delay Refinement}
-To overcome the frequency resolution limits imposed by finite window bin spacing ($\Delta f = f_s / N_{\text{FFT}}$), we incorporate instantaneous phase derivative correction via group delay. The group delay $\tau_g(\omega)$ is computed from the unwrapped phase spectrum:
-\begin{equation}
-\tau_g(\omega)
-=
--\frac{d}{d\omega}
-\arg\left\{X(e^{j\omega})\right\}
-\end{equation}
-This derivative provides sub-bin frequency offsets, significantly reducing cent error during sustained monophonic and polyphonic voicing intervals.
-
-\subsection{Inter-Frame Continuity and Octave Clamping}
-To eliminate spurious frame-to-frame octave jumps caused by transient background noise, we apply an inter-frame dynamic programming smoothing step. Transition costs penalize instantaneous frequency ratios falling within the octave error boundaries ($1.8 \le f_t / f_{t-1} \le 2.2$ or $0.45 \le f_t / f_{t-1} \le 0.55$), enforcing trajectory smoothness across consecutive frames.
-
 \section{Controlled Synthetic Experiments}
 \section{Open Dataset Validation \& Results}
 \section{Limitations \& DSP Failure Analysis}
